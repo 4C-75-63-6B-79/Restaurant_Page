@@ -1,13 +1,29 @@
-function component() {
+import home from './modules/home.js';
+import menu from './modules/menu.js';
+import contact from './modules/contact.js';
+
+function addMenuButtons() {
     const element = document.createElement("div");
+    element.setAttribute("id", "menu");
 
-    const btn = document.createElement("button");
-    btn.innerHTML = "Click me and check the console";
-    btn.addEventListener('click', () => console.log("button was clicked"));
+    const btnHome = document.createElement("button");
+    btnHome.innerHTML = "home";
+    btnHome.addEventListener('click', home);
 
-    element.appendChild(btn);
+    const btnMenu = document.createElement("button");
+    btnMenu.innerHTML = "menu";
+    btnMenu.addEventListener('click', menu);
 
-    return btn;
+    const btnContact = document.createElement("button");
+    btnContact.innerHTML = "contact";
+    btnContact.addEventListener('click', contact);
+
+    element.appendChild(btnHome);
+    element.appendChild(btnMenu);
+    element.appendChild(btnContact);
+
+    return element;
 }
 
-document.body.appendChild(component());
+const content = document.getElementById("content");
+content.appendChild(addMenuButtons());
