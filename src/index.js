@@ -31,7 +31,7 @@ const pageContentContainer = (function() {
 
 function addMenuButtons() {
     const element = document.createElement("div");
-    element.setAttribute("id", "menu");
+    element.setAttribute("id", "menu-buttons");
 
     const btnHome = document.createElement("button");
     btnHome.innerHTML = "home";
@@ -66,3 +66,5 @@ function addMenuButtons() {
 
 const content = document.getElementById("content");
 content.appendChild(addMenuButtons());
+pageContentContainer.addPageContentContainer();
+home();

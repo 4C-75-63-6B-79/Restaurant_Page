@@ -22,7 +22,26 @@ const mainDishes = (function() {
     };
 })();
 
+const bevrages = (function(){
+    let dish1 = {
+        name: 'Cake and Ice cream Shake',
+        description: 'A shake with 2 scoops of ice cream and a whole cake slice.',
+        cost: '$6'
+    }
+    let dish2 = {
+        name: 'Sweet Lemon Juice',
+        description: 'Sweet and refreshing lemon juice to start your day.',
+        cost: '$2'
+    }
+
+    return {
+        dish1,
+        dish2,
+    };
+})();
+
 const displayContent = (function() {
+
     const addMenuTitle = function(element = 'h1', text = 'Menu') {        
         let menuHeading = document.createElement(`${element}`);
         menuHeading.textContent = text;
@@ -32,9 +51,9 @@ const displayContent = (function() {
 
     function createDiv(content) {
         let div = document.createElement('div');
-        div.setAttribute('class', 'menuItems');
+        div.setAttribute('class', 'pageItems');
         
-        console.log(content)
+        // console.log(content);
         let h3 = document.createElement('h3');
         h3.textContent = content.name;
 
@@ -48,14 +67,14 @@ const displayContent = (function() {
         div.appendChild(p);
         div.appendChild(h4);
 
-        console.log(div);
+        // console.log(div);
 
         return div;
     }
 
     const displayDishes = function(contents) {
         let div = document.createElement('div'); // div which stores the similar category of dishes
-
+        div.setAttribute('class', 'category');
         for(let content in contents) {
             div.appendChild(createDiv(contents[content]));
             // console.log(contents[content]);
@@ -79,4 +98,7 @@ export default function menu() {
     
     pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Main Dishes'));
     pageContentContainer.appendChild(displayContent.displayDishes(mainDishes));
+
+    pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Bevrages'));
+    pageContentContainer.appendChild(displayContent.displayDishes(bevrages));
 }
