@@ -29,7 +29,7 @@ button {
 }
 
 .pressed{
-    background-color: aliceblue;
+    background: url('../assets/papapishu_Fried_egg.svg');
 }
 
 #page-content-container {
