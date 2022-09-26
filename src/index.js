@@ -35,7 +35,7 @@ const pageContentContainer = (function() {
 
     const btnHome = document.createElement("button");
     btnHome.setAttribute('class','pressed');
-    btnHome.innerHTML = "home";
+    btnHome.innerHTML = "Home";
     btnHome.addEventListener('click', function() {
         pageContentContainer.removePageContentContainer();
         pageContentContainer.addPageContentContainer();
@@ -44,7 +44,7 @@ const pageContentContainer = (function() {
     });
 
     const btnMenu = document.createElement("button");
-    btnMenu.innerHTML = "menu";
+    btnMenu.innerHTML = "Menu";
     btnMenu.addEventListener('click', function() {
         pageContentContainer.removePageContentContainer();
         pageContentContainer.addPageContentContainer();
@@ -53,7 +53,7 @@ const pageContentContainer = (function() {
     });
 
     const btnContact = document.createElement("button");
-    btnContact.innerHTML = "contact";
+    btnContact.innerHTML = "Contact";
     btnContact.addEventListener('click', function() {
         pageContentContainer.removePageContentContainer();
         pageContentContainer.addPageContentContainer();

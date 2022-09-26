@@ -22,7 +22,7 @@ const addContent = function() {
     let restaurantLoaction = document.createElement('div');
     restaurantLoaction.setAttribute('class', 'pageItems');
     let location = document.createElement('h3');
-    location.textContent = Restaurant.location;
+    location.textContent = 'Location';
     let p2 = document.createElement('p');
     p2.textContent = Restaurant.location;
     restaurantLoaction.appendChild(location);
