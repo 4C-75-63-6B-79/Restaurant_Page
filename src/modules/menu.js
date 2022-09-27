@@ -72,9 +72,11 @@ const displayContent = (function() {
         return div;
     }
 
-    const displayDishes = function(contents) {
+    const displayDishes = function(contents, heading) {
         let div = document.createElement('div'); // div which stores the similar category of dishes
         div.setAttribute('class', 'category');
+        let category = addMenuTitle('h2', heading);
+        div.appendChild(category);
         for(let content in contents) {
             div.appendChild(createDiv(contents[content]));
             // console.log(contents[content]);
@@ -96,9 +98,9 @@ export default function menu() {
 
     pageContentContainer.appendChild(displayContent.addMenuTitle());
     
-    pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Main Dishes'));
-    pageContentContainer.appendChild(displayContent.displayDishes(mainDishes));
+    // pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Main Dishes'));
+    pageContentContainer.appendChild(displayContent.displayDishes(mainDishes, 'Main Dishes'));
 
-    pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Bevrages'));
-    pageContentContainer.appendChild(displayContent.displayDishes(bevrages));
+    // pageContentContainer.appendChild(displayContent.addMenuTitle('h2', 'Bevrages'));
+    pageContentContainer.appendChild(displayContent.displayDishes(bevrages, 'Bevrages'));
 }
