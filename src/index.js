@@ -77,10 +77,6 @@ const pageContentContainer = (function() {
 
     const content = document.getElementById("content");
     content.appendChild(element);
-})();
-
-
-(function start(){
     pageContentContainer.addPageContentContainer();
     home();
 })();
